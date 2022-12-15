@@ -1,0 +1,15 @@
+
+.navBarSpanCustom
+{
+    display: flex;
+    justify-content: center;
+}
+.navBarSpanCustom span {
+    font-weight: 600 ;
+    /* text-align: center; */
+}
+
+.customNavEndClass {
+    width: 100% !important;
+    justify-content: end !important;
+}
