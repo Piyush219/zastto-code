@@ -1,6 +1,9 @@
 .mainAppContainer{
-  background-color: purple;
-  height: 100vh;
+  background-color: #1F2336;
+  height: 100%;
+  min-height: 100vh;
+  font-family: sans-serif;
+  color: white;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -20,11 +23,6 @@
 
 .commonFormContainer{
   width: 40%;
-  /* background-color: #ffa500c7; */
-  background-color: #1671FB;
-  padding: 10px;
-  border-radius: 5px;
-  height: 500px;
 }
 
 .commonFormGroupClass{
@@ -35,6 +33,6 @@
 }
 
 .commonFormButtonClass{
-  position: absolute;
+  position: inherit;
   bottom: 0;
 }
