@@ -22,7 +22,7 @@
 }
 
 .commonFormContainer{
-  width: 400px;
+  width: 430px;
 }
 
 .commonFormGroupClass{
@@ -32,9 +32,12 @@
   flex-direction: column;
 }
 
-.commonFormButtonClass{
-  position: inherit;
-  bottom: 0;
+.commonFormButtonClass button{
+  background-color: #1F2336;
+}
+
+.commonFormButtonClass button :hover{
+  background-color: #1F2336 !important;
 }
 
 ::-webkit-scrollbar {

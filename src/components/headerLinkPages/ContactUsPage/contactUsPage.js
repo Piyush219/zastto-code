@@ -1,29 +1,37 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import styles from "./contactUsPage.module.css";
 
 function ContactUs() {
     return ( 
-        <div>
-            <h4>To Connect with us drop your details below:</h4>
-            <Form>
+        <div className={styles.contatcUsContainer}>
+            <h4><strong>To Connect with us drop your details below:</strong></h4>
+            <Form className="mt-4">
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
-                    <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
-                    </Form.Text>
+                    <Form.Label className="text-white"><strong>Name:</strong></Form.Label>
+                    <Form.Control type="text" placeholder="Enter Name" />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label className="text-white"><strong>Email address:</strong></Form.Label>
+                    <Form.Control type="email" placeholder="Enter email" />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
+
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label className="text-white"><strong>Mobile Number:</strong></Form.Label>
+                    <Form.Control type="number" placeholder="Enter Mobile" />
                 </Form.Group>
-                <Button variant="primary" type="submit">
-                    Submit
-                </Button>
+
+                <Form.Group className="mb-3" controlId="formBasicTextArea">
+                    <Form.Label className="text-white"><strong>Please Tell Us Yoru Query:</strong></Form.Label>
+                    <Form.Control as="textarea" rows={3} placeholder="Write here" />
+                </Form.Group>
+
+                <div className="commonFormButtonClass">
+                    <Button variant="primary" type="button">
+                        Submit
+                    </Button>
+                </div>
             </Form>
         </div>
      );

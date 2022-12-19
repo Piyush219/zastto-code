@@ -29,7 +29,7 @@ function BusinessForm (props) {
                                 <Form.Control type="text" rows={1} placeholder="Write here" />
                             </Form.Group>
 
-                            <div className="">
+                            <div className="commonFormButtonClass">
                             <Button variant="primary" type="button">
                                 Submit
                             </Button>

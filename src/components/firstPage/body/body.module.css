@@ -1,9 +1,8 @@
 .bodyMainContainer{
     display: flex;
-    /* justify-content: space-between; */
-    /* position: absolute; */
     flex-direction: column;
-    /* height: calc(100% - 60px); */
+    margin-top: 15px;
+    width: 100%;
 }
 
 .formMainContainer{
@@ -11,19 +10,3 @@
     justify-content: space-around;
     flex-wrap: wrap;
 }
-
-/* @media screen and (max-width: 720px) {
-    .formMainContainer{
-        height: 350px;
-        overflow: auto;
-    }
-} */
-
-/* @media screen and (max-width: 680px) {
-    .introParaMainContainer{
-        padding: 0 15px 0 15px;
-        display: flex;
-        height: 50vh;
-        align-items: center;
-    }
-} */

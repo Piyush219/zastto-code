@@ -25,7 +25,7 @@ function NavBar() {
     }
 
     return ( 
-        <Navbar expand="lg" bg="transparent" variant="light">
+        <Navbar expand="lg" bg="transparent" variant="dark" fixed="top">
             <Container>
                 <div style={{marginRight:"65%"}}>
                     <Navbar.Brand><strong className="text-white" style={{cursor:"pointer"}} onClick={homePageZastto}>Zastto</strong></Navbar.Brand>
@@ -43,18 +43,6 @@ function NavBar() {
                 </Navbar.Collapse>
             </Container>
         </Navbar>
-        // <div className={`${styles.navBarMainContainer} pt-4`}>
-        //     <div>
-        //         <h3 className="ms-3"><strong>Zastto</strong></h3>
-        //     </div>
-
-            // <div className={`${styles.navBarOtherPages} me-4`} >
-            //     <span>Zastto Community</span>
-            //     <span className="" >About</span>
-            //     <span className="" >Contact</span>
-            // </div>
-
-        // </div>
      );
 }
 

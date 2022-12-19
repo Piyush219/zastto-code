@@ -6,7 +6,7 @@ import IntroShortPara from "./introShortPara/introPara";
 
 function Body() {
     return ( 
-        <div className={`${styles.bodyMainContainer} mt-5`} style={{width:"100%"}}>
+        <div className={`${styles.bodyMainContainer}`}>
             <div className={`${styles.introParaMainContainer}`}>
                 <IntroShortPara/>
             </div>

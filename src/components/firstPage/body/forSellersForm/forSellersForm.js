@@ -2,8 +2,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown';
 import Select from 'react-select';
-import Accordion from 'react-bootstrap/Accordion';
-import styles from "./forSellersForm.module.css";
+// import styles from "./forSellersForm.module.css";
 
 
 let demoSkills = [
@@ -81,10 +80,10 @@ function SellerForm(props) {
                     </Dropdown>
                 </Form.Group>
 
-                <div className="">
-                <Button variant="primary" type="button">
-                    Submit
-                </Button>
+                <div className="commonFormButtonClass">
+                    <Button variant="primary" type="button">
+                        Submit
+                    </Button>
                 </div>
             </Form>
         </div>
