@@ -1,11 +1,15 @@
 import './App.css';
 import FirstPage from './components/firstPage/firstPage';
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className='mainAppContainer'>
-      <FirstPage/>
-    </div>
+    <BrowserRouter>
+      <div className='mainAppContainer'>
+        <FirstPage/>
+      </div>
+    </BrowserRouter>
   );
 }
 

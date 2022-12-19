@@ -12,8 +12,8 @@ function Body() {
             </div>
            
             <div className={`${styles.formMainContainer} mt-4`}>
-                <BusinessForm/>
                 <SellerForm/>
+                <BusinessForm/>
             </div>
         </div>
      );

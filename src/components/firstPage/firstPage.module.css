@@ -1,14 +1,37 @@
+
 .firstPageContainer {
+  
+  position: relative;
   /* background-color: #1F2336; */
+}
+.firstPageContainer::before{
+  content: '';
+  background-image: url('../../assests/pexels-caio-56759.jpg');
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+.firstPageContainer::after{
+  content: '';
+  background-color:#1f233675;;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
 }
 
 .imageCustomClass{
-  /* z-index: -1; */
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   opacity: 0.2;
+  
 }
+
 
 /* @media screen and (max-width: 590px) {
   .imageCustomClass{

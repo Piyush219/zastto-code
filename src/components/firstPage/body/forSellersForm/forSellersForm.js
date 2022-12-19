@@ -6,16 +6,26 @@ import Accordion from 'react-bootstrap/Accordion';
 import styles from "./forSellersForm.module.css";
 
 
-let demoSkills = ["SEO","Content Wriitng","Graphic Designing","Facebook Ads", "Instagram Marketing", "Google Ads", "Web Development", "React JS", "JavaScript",
-                "Angular", "Node JS"]
+let demoSkills = [
+    "SEO",
+    "Content Wriitng",
+    "Graphic Designing",
+    "UI/UX",
+    "Facebook Ads", 
+    "Instagram Marketing", 
+    "Google Ads", 
+    "Web Development", 
+    "React JS", 
+    "JavaScript",
+    "Angular", 
+    "Node JS"
+]
 
 let skillsToRender = demoSkills.map((item) => ({label:item, value:item}))
 
 const customSelectStyle = {
     control : (base, state) => ({
         ...base,
-        // height:"10px",
-        // minHeigth:"10px",
         overflow:"auto",
         position:"relative"
     }),
@@ -25,11 +35,10 @@ const customSelectStyle = {
         color:"black",
         fontFamily:"sans-serif",
         fontSize:"12px",
-        // overflow:"hidden",
     }),
     menuList: base => ({
-    ...base,
-    overflow:"auto"
+        ...base,
+        overflow:"auto"
 })
 }
 
@@ -41,9 +50,9 @@ function SellerForm(props) {
 
     return ( 
         <div className="commonFormContainer">
-                <div className="text-center"><strong>Zastto Seller</strong></div>
-                <div className='text-center'>Join Zastto as a freelancer?</div>
-                <Form className="">
+            <div className="text-center"><strong>Zastto Seller</strong></div>
+            <div className='text-center'>Join Zastto as a freelancer and boost your career.</div>
+            <Form className="">
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label className="text-white"><strong>Name:</strong></Form.Label>
                     <Form.Control type="text" placeholder="Enter Name" />

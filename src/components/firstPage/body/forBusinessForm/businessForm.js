@@ -25,7 +25,7 @@ function BusinessForm (props) {
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicProject">
-                                <Form.Label className="text-white"><strong>Project Description or Skills/Talent you are looking for</strong></Form.Label>
+                                <Form.Label className="text-white"><strong>Project Description or Skills/Talent you are looking for:</strong></Form.Label>
                                 <Form.Control type="text" rows={1} placeholder="Write here" />
                             </Form.Group>
 

@@ -7,11 +7,11 @@ function FirstPage () {
 
     return ( 
         <div className={styles.firstPageContainer}>
-        <img className={styles.imageCustomClass} src={backgroundImage} alt="img"/>
-        <div style={{position:"absolute", width:"100%"}}>
-            <Header/>
-            <Body/>
-        </div>
+            {/* <img className={styles.imageCustomClass} src={backgroundImage} alt="img"/> */}
+            <div style={{ width:"100%", minHeight:"100vh"}}>
+                <Header/>
+                <Body/>
+            </div>
         </div>
      );
 }

@@ -1,19 +1,16 @@
 .navBarMainContainer{
     display: flex;
     justify-content: space-between;
-    /* position: absolute; */
 }
 
 .navBarOtherPages{
     display: flex;
-    /* margin-right: 22px; */
     gap: 1em;
 
 }
 
 .navBarOtherPages span{
     cursor: pointer;
-    /* width: 130px; */
 }
 
 
@@ -21,6 +18,12 @@
 .customNavbarIconClass {
     border: 2px solid white !important;
     outline: none !important;
+}
+
+.customNavbarIconClass :focus{
+    outline: none !important;
+    outline-offset: none !important;
+    box-shadow: none !important;
 }
 
 .customNavbarIconClass span {
