@@ -5,6 +5,7 @@ import { useState } from 'react';
 function BusinessForm (props) {
 
     const [businessFormValues, setBusinessFormValues] = useState();
+    const [mobileValidation, setMobileValidation] = useState(false);
 
     const onBusinessFormChange = (event) => {
         
@@ -19,8 +20,14 @@ function BusinessForm (props) {
 
     const businessSubmitHandler = (event) => {
         event.preventDefault();
-        let businessPayload = businessFormValues;
-        console.log("Paylaod>>",businessPayload)
+        if(businessFormValues?.business_mobile && businessFormValues?.business_mobile.length < 10){
+            setMobileValidation(true)
+        } else {
+            setMobileValidation(false)
+            let businessPayload = businessFormValues;
+            console.log("Paylaod>>",businessPayload)
+            event.target.reset();
+        }
     }
 
     return ( 
@@ -42,6 +49,7 @@ function BusinessForm (props) {
                             <Form.Group className="mb-3" controlId="formBasicMobile">
                                 <Form.Label className="text-white"><strong>Mobile Number:</strong></Form.Label>
                                 <Form.Control type="number" name="business_mobile" placeholder="Enter Mobile" onChange={onBusinessFormChange} onKeyPress={mobileNumberValidation} required/>
+                                {mobileValidation && <span className="commonErrorShowClass">Please enter 10 digit mobile number</span>}
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicProject">

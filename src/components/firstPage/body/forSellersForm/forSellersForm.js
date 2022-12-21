@@ -46,6 +46,8 @@ function SellerForm(props) {
 
     const [formValues, setFormValues] = useState();
     const [skillValues, setSkillValues] = useState([]);
+    const [mobileValidation, setMobileValidation] = useState(false);
+    const [enterSkillCheck, setEnteredSkillCheck] = useState(false);
 
     const onSellerFormChange = (event) => {
         const name = event.target.name;
@@ -78,10 +80,23 @@ function SellerForm(props) {
 
     const sellerSubmitHandler = (event) => {
         event.preventDefault()
-        let payload =  {
-            ...formValues, seller_skills: skillValues
-        };
-        console.log("payload>>",payload)
+        if(formValues?.seller_mobile && formValues?.seller_mobile.length < 10){
+            setMobileValidation(true)
+        } else {
+            setMobileValidation(false)
+            if(!skillValues.length){
+                setEnteredSkillCheck(true)
+            }
+             else {
+                setEnteredSkillCheck(false)
+                 let payload =  {
+                     ...formValues, seller_skills: skillValues
+                 };
+                 console.log("payload>>",payload)
+                 event.target.reset();
+             }
+        }
+        
     }
 
     return ( 
@@ -102,6 +117,7 @@ function SellerForm(props) {
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label className="text-white"><strong>Mobile Number:</strong></Form.Label>
                     <Form.Control type="number" name="seller_mobile" onChange={onSellerFormChange} onKeyPress={mobileNumberValidation} placeholder="Enter Mobile" required/>
+                    {mobileValidation && <span className="commonErrorShowClass">Please enter 10 digit mobile number</span>}
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicSkills">
@@ -116,6 +132,7 @@ function SellerForm(props) {
                             required
                         />
                     </Dropdown>
+                    {enterSkillCheck && <span className="commonErrorShowClass">Please select atleast one skill.</span>}
                 </Form.Group>
 
                 <div className="commonFormButtonClass">

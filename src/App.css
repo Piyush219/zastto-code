@@ -43,3 +43,9 @@
 ::-webkit-scrollbar {
   width: 2px;
 }
+
+.commonErrorShowClass{
+  color: red;
+  font-size: 10px;
+  font-weight: bold;
+}

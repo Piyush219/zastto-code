@@ -6,6 +6,7 @@ import styles from "./contactUsPage.module.css";
 function ContactUs() {
 
     const [contactFormValues, setContactFormValues] = useState();
+    const [mobileValidation, setMobileValidation] = useState(false);
 
     const onContactFormChange = (event) => {
         const name = event.target.name;
@@ -14,13 +15,19 @@ function ContactUs() {
     }
 
     const mobileNumberValidation = (event) => {
-        (!/[0-9]/.test(event.key) || event.target.value.length>10) && event.preventDefault()
+        (!/[0-9]/.test(event.key) || event.target.value.length>10) && event.preventDefault();
     }
 
     const contactSubmitHandler = (event) => {
         event.preventDefault();
-        let contactPayload = contactFormValues;
-        console.log("Paylaod>>",contactPayload)
+        if(contactFormValues?.contact_mobile && contactFormValues?.contact_mobile.length < 10){
+            setMobileValidation(true)
+        } else {
+            setMobileValidation(false)
+            let contactPayload = contactFormValues;
+            console.log("Paylaod>>",contactPayload);
+            event.target.reset();
+        }
     }
 
     return ( 
@@ -40,6 +47,7 @@ function ContactUs() {
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label className="text-white"><strong>Mobile Number:</strong></Form.Label>
                     <Form.Control type="number" name="contact_mobile" required onChange={onContactFormChange} placeholder="Enter Mobile" onKeyPress={mobileNumberValidation}/>
+                    {mobileValidation && <span className="commonErrorShowClass">Please enter 10 digit mobile number</span>}
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicTextArea">
