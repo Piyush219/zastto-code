@@ -13,7 +13,9 @@
     cursor: pointer;
 }
 
-
+.navBarCustomClass{
+    background-color: #382121e8;
+}
 
 .customNavbarIconClass {
     border: 2px solid white !important;
