@@ -14,42 +14,42 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.post("/businesses", async (req, res) => {
-  const { name, email, subject, message } = req.body;
+  const { business_name, business_email, business_mobile, business_project } = req.body;
   const response = await sendMail({
     to: EMAIL,
-    subject: subject,
-    body: `Hello! ${name} (${email})
+    subject: business_mobile,
+    body: `Hello! ${business_name} (${business_email})
 
-    Sent you the following message: ${message}`,
+    Sent you the following message: ${business_project}`,
   });
-  console.log(req.body);
-  //   res.json({ ok: "ok", response });
+  // console.log(req.body);
+    // res.json({ ok: "ok", response });
   res.json({ ok: "ok", message: "Message sent successfully" });
 });
 
 app.post("/sellers", async (req, res) => {
-    const { name, email, subject, message } = req.body;
-    // const response = await sendMail({
-    //   to: EMAIL,
-    //   subject: subject,
-    //   body: `Hello! ${name} (${email})
+    const { seller_name, seller_email, seller_mobile, seller_skills } = req.body;
+    const response = await sendMail({
+      to: EMAIL,
+      subject: seller_mobile,
+      body: `Hello! ${seller_name} (${seller_email})
   
-    //   Sent you the following message: ${message}`,
-    // });
-  console.log(req.body);
+      Sent you the following message: ${seller_skills}`,
+    });
+  // console.log(req.body);
   //   res.json({ ok: "ok", response });
   res.json({ ok: "ok", message: "Message sent successfully" });
 });
 
 app.post("/contactus", async (req, res) => {
-  const { name, email, subject, message } = req.body;
-  // const response = await sendMail({
-  //   to: EMAIL,
-  //   subject: subject,
-  //   body: `Hello! ${name} (${email})
+  const { contact_name, contact_email, contact_mobile, contact_queryDiscription  } = req.body;
+  const response = await sendMail({
+    to: EMAIL,
+    subject: contact_mobile,
+    body: `Hello! ${contact_name} (${contact_email})
 
-  //   Sent you the following message: ${message}`,
-  // });
+    Sent you the following message: ${contact_queryDiscription    }`,
+  });
 console.log(req.body);
 //   res.json({ ok: "ok", response });
 res.json({ ok: "ok", message: "Message sent successfully" });

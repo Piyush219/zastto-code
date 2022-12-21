@@ -3,6 +3,8 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import styles from "./contactUsPage.module.css";
 
+import axios from 'axios';
+
 function ContactUs() {
 
     const [contactFormValues, setContactFormValues] = useState();
@@ -25,7 +27,9 @@ function ContactUs() {
         } else {
             setMobileValidation(false)
             let contactPayload = contactFormValues;
-            console.log("Paylaod>>",contactPayload);
+            const response=axios.post('http://localhost:5000/contactus', contactPayload);
+            console.log("Paylaod>>",contactPayload)
+            console.log("response>>",response)
             event.target.reset();
         }
     }

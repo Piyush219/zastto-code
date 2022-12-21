@@ -5,6 +5,8 @@ import Select from 'react-select';
 import { useEffect, useState } from 'react';
 // import styles from "./forSellersForm.module.css";
 
+import axios from 'axios';
+
 
 let demoSkills = [
     "SEO",
@@ -92,7 +94,9 @@ function SellerForm(props) {
                  let payload =  {
                      ...formValues, seller_skills: skillValues
                  };
+                 const response=axios.post('http://localhost:5000/sellers', payload);
                  console.log("payload>>",payload)
+                 console.log("response>>",response)
                  event.target.reset();
              }
         }

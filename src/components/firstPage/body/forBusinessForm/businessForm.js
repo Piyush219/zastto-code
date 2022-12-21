@@ -2,6 +2,8 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
 
+import axios from 'axios';
+
 function BusinessForm (props) {
 
     const [businessFormValues, setBusinessFormValues] = useState();
@@ -25,7 +27,9 @@ function BusinessForm (props) {
         } else {
             setMobileValidation(false)
             let businessPayload = businessFormValues;
+            const response=axios.post('http://localhost:5000/businesses', businessPayload);
             console.log("Paylaod>>",businessPayload)
+            console.log("response>>",response)
             event.target.reset();
         }
     }
