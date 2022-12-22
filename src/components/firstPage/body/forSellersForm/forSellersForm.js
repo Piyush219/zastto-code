@@ -46,10 +46,12 @@ const customSelectStyle = {
 
 function SellerForm(props) {
 
+    const [options] = useState(skillsToRender);
     const [formValues, setFormValues] = useState();
-    const [skillValues, setSkillValues] = useState([]);
+    // const [skillValues, setSkillValues] = useState([]);
     const [mobileValidation, setMobileValidation] = useState(false);
     const [enterSkillCheck, setEnteredSkillCheck] = useState(false);
+    const [selected, setSelected] = useState([]);
 
     const onSellerFormChange = (event) => {
         const name = event.target.name;
@@ -61,24 +63,24 @@ function SellerForm(props) {
         (!/[0-9]/.test(event.key) || event.target.value.length>10) && event.preventDefault()
     }
 
-    useEffect(()=>{
-        console.log("Skill Values",skillValues)
-    },[skillValues])
+    // useEffect(()=>{
+    //     console.log("Skill Values",skillValues)
+    // },[skillValues])
 
     
 
-    const selectOptions = (opt) => {
-        let newArr = [];
+    // const selectOptions = (opt) => {
+    //     let newArr = [];
 
-        if(opt && opt.length){
-            opt.forEach(item => newArr.push(item.value));
-            setSkillValues([ ...newArr])
+    //     if(opt && opt.length){
+    //         opt.forEach(item => newArr.push(item.value));
+    //         setSkillValues([ ...newArr])
             
-        } else {
-            newArr = []
-            setFormValues(newArr)
-        }
-    }
+    //     } else {
+    //         newArr = []
+    //         setFormValues(newArr)
+    //     }
+    // }
 
     const sellerSubmitHandler = (event) => {
         event.preventDefault()
@@ -86,18 +88,19 @@ function SellerForm(props) {
             setMobileValidation(true)
         } else {
             setMobileValidation(false)
-            if(!skillValues.length){
+            if(!selected.length){
                 setEnteredSkillCheck(true)
             }
              else {
                 setEnteredSkillCheck(false)
                  let payload =  {
-                     ...formValues, seller_skills: skillValues
+                     ...formValues, seller_skills: selected.map(item => item.value)
                  };
                  const response=axios.post('http://localhost:5000/sellers', payload);
                  console.log("payload>>",payload)
                  console.log("response>>",response)
                  event.target.reset();
+                 setSelected([])
              }
         }
         
@@ -128,12 +131,13 @@ function SellerForm(props) {
                     <Form.Label className="text-white"><strong>Please Select Your Skills:</strong></Form.Label>
                     <Dropdown>
                         <Select
-                            options={skillsToRender}
-                            onChange={(opt) => selectOptions(opt)}
+                            options={options}
+                            onChange={setSelected}
                             isMulti={true}
                             styles={customSelectStyle}
                             menuPlacement="top"
                             required
+                            value={selected}
                         />
                     </Dropdown>
                     {enterSkillCheck && <span className="commonErrorShowClass">Please select atleast one skill.</span>}

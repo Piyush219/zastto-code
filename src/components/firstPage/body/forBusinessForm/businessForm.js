@@ -58,7 +58,7 @@ function BusinessForm (props) {
 
                             <Form.Group className="mb-3" controlId="formBasicProject">
                                 <Form.Label className="text-white"><strong>Project Description or Skills/Talent you are looking for:</strong></Form.Label>
-                                <Form.Control type="text" name="business_project" rows={1} placeholder="Write here" onChange={onBusinessFormChange} required/>
+                                <Form.Control as="textarea" name="business_project" rows={1} placeholder="Write here" onChange={onBusinessFormChange} required/>
                             </Form.Group>
 
                             <div className="commonFormButtonClass">
