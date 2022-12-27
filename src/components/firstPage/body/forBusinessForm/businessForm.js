@@ -27,7 +27,7 @@ function BusinessForm (props) {
         } else {
             setMobileValidation(false)
             let businessPayload = businessFormValues;
-            const response=axios.post('http://localhost:5000/businesses', businessPayload);
+            const response=axios.post('/businesses', businessPayload);
             console.log("Paylaod>>",businessPayload)
             console.log("response>>",response)
             event.target.reset();

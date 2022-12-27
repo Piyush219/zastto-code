@@ -96,7 +96,7 @@ function SellerForm(props) {
                  let payload =  {
                      ...formValues, seller_skills: selected.map(item => item.value)
                  };
-                 const response=axios.post('http://localhost:5000/sellers', payload);
+                 const response=axios.post('/sellers', payload);
                  console.log("payload>>",payload)
                  console.log("response>>",response)
                  event.target.reset();

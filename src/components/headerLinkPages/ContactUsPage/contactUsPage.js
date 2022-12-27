@@ -27,7 +27,7 @@ function ContactUs() {
         } else {
             setMobileValidation(false)
             let contactPayload = contactFormValues;
-            const response=axios.post('http://localhost:5000/contactus', contactPayload);
+            const response=axios.post('/contactus', contactPayload);
             console.log("Paylaod>>",contactPayload)
             console.log("response>>",response)
             event.target.reset();
