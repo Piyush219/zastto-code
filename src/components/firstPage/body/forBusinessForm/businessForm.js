@@ -17,7 +17,7 @@ function BusinessForm (props) {
     }
 
     const mobileNumberValidation = (event) => {
-        (!/[0-9]/.test(event.key) || event.target.value.length>10) && event.preventDefault()
+        (!/[0-9]/.test(event.key) || event.target.value.length>=10) && event.preventDefault();
     }
 
     const businessSubmitHandler = (event) => {
