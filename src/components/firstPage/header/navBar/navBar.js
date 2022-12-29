@@ -27,7 +27,7 @@ function NavBar() {
     return ( 
         <Navbar className={styles.navBarCustomClass} expand="lg" bg="" variant="dark" fixed="top">
             <Container>
-                <div style={{marginRight:"65%"}}>
+                <div style={{marginRight:"55%"}}>
                     <Navbar.Brand><strong className="text-white" style={{cursor:"pointer"}} onClick={homePageZastto}>Zastto</strong></Navbar.Brand>
                 </div>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" className={styles.customNavbarIconClass}>
