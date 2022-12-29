@@ -24,7 +24,7 @@ app.post("/businesses", async (req, res) => {
   });
   // console.log(req.body);
     // res.json({ ok: "ok", response });
-  res.json({ ok: "ok", message: "Message sent successfully" });
+    res.sendStatus(200);
 });
 
 app.post("/sellers", async (req, res) => {
@@ -38,7 +38,7 @@ app.post("/sellers", async (req, res) => {
     });
   // console.log(req.body);
   //   res.json({ ok: "ok", response });
-  res.json({ ok: "ok", message: "Message sent successfully" });
+  res.sendStatus(200);
 });
 
 app.post("/contactus", async (req, res) => {
@@ -50,9 +50,9 @@ app.post("/contactus", async (req, res) => {
 
     Sent you the following message: ${contact_queryDiscription    }`,
   });
-console.log(req.body);
+// console.log({response});
 //   res.json({ ok: "ok", response });
-res.json({ ok: "ok", message: "Message sent successfully" });
+res.sendStatus(200);
 });
 
 app.use(express.static(path.join(__dirname, "/build")));
